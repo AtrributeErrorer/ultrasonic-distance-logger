@@ -1,7 +1,7 @@
 
 
-int SENDSIG = 5;
-int ECHO = 6;
+int SENDSIG = YOUR TRIG VALUE HERE; //YOUR TRIG VALUE HERE
+int ECHO = YOUR ECHO VALUE HERE; // YOUR ECHO VALUE HERE
 unsigned long duration = 1;
 float distance;
 
@@ -25,9 +25,6 @@ void loop() {
   
   //measure the duration of how long it takes for the sound to be sent and returned
   duration = pulseIn(ECHO, HIGH, 30000); // Around 5 meters max~
-  
-  //Use the formula for distance
-  //distance = duration * 0.0343 / 2;
   
   if(duration > 0) {
     Serial.println(duration);
