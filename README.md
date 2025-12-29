@@ -10,7 +10,7 @@ Install the dependencies with the following command:
 pip install -r requirements.txt
 ```
 
-This project measures distance using an **Arduino Nano with a HC-SR04 ultrasonic sensor**, and processes the data through Python for filtering and logging. The goal is to take raw, unfiltered data, clean and filter them, then produce **accurate measurements** for analysis. The objective is to receive raw undisturbed data, clean them, scale and filter in order to obtain accurate measures for analysis purposes. The ultrasonic sensor can be very noisy because jumps / impossible / noise distance spikes, this system performs **statistical filtering** to discard out-of-value (range) values. Instead of trusting a single reading, this program collects multiple readings into a batch, filters them, then outputs an accurate measurement. All can be done **live** while the Arduino is connected via usb.
+This project measures distance using an **Arduino Nano with a HC-SR04 ultrasonic sensor**, and processes the data through Python for filtering and logging. The objective is to receive raw data, clean and filter them in order to obtain **accurate measurements** for analysis purposes. The ultrasonic sensor can be very noisy due to jumps / impossible spikes / noise, this system performs **statistical filtering** to discard those garbage values. Instead of trusting a single reading, this program collects multiple readings into a batch, filters them, then outputs an accurate measurement. All can be done **live** while the Arduino is connected via usb.
 
 ## FEATURES
 - Reads the **raw echo (microseconds)** of the sound waves streamed over **serial** from the Arduino. 
@@ -18,10 +18,10 @@ This project measures distance using an **Arduino Nano with a HC-SR04 ultrasonic
 - Batches N sensor samples to reduce single-reading noise
 - Uses **statistical filtering**
   - Median-centered filtering
-  - Script reads the batch of N values, uses **percentile/IQR filter** around median to remove spikes / impossible jumps
-  - Returns the **average** as the final distance.
+  - Script reads the batch of N values, thne uses **percentile/IQR filter** around the median, calculates spread, then sets a boundary to remove spikes / impossible jumps
+  - Returns the **average** of the values that remain as the final distance.
 - **Live anaylysis** of distances, visually differentiating raw vs filtered
-- All clean logs, stats, and raw data results are imported to a **CSV file** for human analysis if needed (e.g., calibration, accuracy tests, graphing, research).
+- All clean logs, stats, and raw data results are imported to a **CSV file** for human analysis if needed (calibration, accuracy tests, graphing, research, stats).
 
 ## HARDWARE
 - Arduino Nano
