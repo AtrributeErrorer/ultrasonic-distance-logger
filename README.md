@@ -18,7 +18,7 @@ This project measures distance using an **Arduino Nano with a HC-SR04 ultrasonic
 - Batches N sensor samples to reduce single-reading noise
 - Uses **statistical filtering**
   - Median-centered filtering
-  - Script reads the batch of N values, thne uses **percentile/IQR filter** around the median, calculates spread, then sets a boundary to remove spikes / impossible jumps
+  - Script reads the batch of N values, then uses **percentile/IQR filter** around the median, calculates spread, then sets a boundary to remove spikes / impossible jumps
   - Returns the **average** of the values that remain as the final distance.
 - **Live anaylysis** of distances, visually differentiating raw vs filtered
 - All clean logs, stats, and raw data results are imported to a **CSV file** for human analysis if needed (calibration, accuracy tests, graphing, research, stats).
