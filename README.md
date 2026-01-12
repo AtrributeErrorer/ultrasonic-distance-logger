@@ -34,4 +34,4 @@ The code is provided for the Arduino Nano and the ultrasonic sensor, it is recom
 - Upload the sketch to your Nano
 - Edit `config.ini` to your preference (COM port, runtime duration, sample batch size (Recommended 10), temperature (°C), min/max distance thresholds)
 - Run `python main.py`, see live readings from Arduino (raw vs filtered)
-- Generated CSV file (raw sensor values, filtered data, spread, quartiles, final computed distances, timestamps, median, boundaries)
+- Generated CSV file (raw sensor values, filtered data, spread, quartiles, final computed distances, timestamps, median, boundaries) 
